@@ -11,8 +11,8 @@ import (
 
 	"context"
 
-	accountrpc "github.com/DameinCode/Golang-spring-2022/Uni/Final/OnlineBookStore/Account/rpc"
-	"github.com/DameinCode/Golang-spring-2022/Uni/Final/OnlineBookStore/store"
+	accountrpc "github.com/DameinCode/OnlineBookStore/OnlineBookStore/Account/rpc"
+	"github.com/DameinCode/OnlineBookStore/OnlineBookStore/store"
 )
 
 // Service holds RPC handlers for the order service. It implements the orderrpc.ServiceServer interface.

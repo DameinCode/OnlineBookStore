@@ -5,7 +5,7 @@ import (
 	"sync"
 
 	// "C:/Users/user/Documents/Coding/Golang/Uni/Final/OnlineBookStore/Account/rpc"
-	"github.com/DameinCode/Golang-spring-2022/Uni/Final/OnlineBookStore/Account/rpc"
+	"github.com/DameinCode/OnlineBookStore/OnlineBookStore/Account/rpc"
 	"github.com/pkg/errors"
 )
 

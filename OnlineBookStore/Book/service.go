@@ -3,9 +3,9 @@ package book
 import (
 	"context"
 
-	bookrpc "github.com/DameinCode/Golang-spring-2022/Uni/Final/OnlineBookStore/Book/rpc"
+	bookrpc "github.com/DameinCode/OnlineBookStore/OnlineBookStore/Book/rpc"
 
-	"github.com/DameinCode/Golang-spring-2022/Uni/Final/OnlineBookStore/store"
+	"github.com/DameinCode/OnlineBookStore/OnlineBookStore/store"
 )
 
 // Service holds RPC handlers for the product service. It implements the product.ServiceServer interface.

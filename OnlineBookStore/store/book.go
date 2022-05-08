@@ -4,7 +4,7 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/DameinCode/Golang-spring-2022/Uni/Final/OnlineBookStore/Book/rpc"
+	"github.com/DameinCode/OnlineBookStore/OnlineBookStore/Account/rpc"
 	"github.com/pkg/errors"
 )
 
