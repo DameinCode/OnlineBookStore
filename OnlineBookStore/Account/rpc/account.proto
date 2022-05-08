@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package account;
+
+option go_package = "/rpc;accountrpc";
+
+message Account {
+    string id = 1;
+    string type = 2; // admin/user/author
+    string fname = 3;
+    string lname = 4;
+    string username = 5;
+    string pswd = 6; // hash of the password to check 
+    Cart cart = 7;
+}
+
+
+message Book {
+    string name = 1;
+    string author = 2;
+    int64 year = 3;
+    string annotation = 4;
+    string content = 5;
+}
+
+message Cart {
+
+    map<string, int32> bookList = 1;
+}
+
+// send request to the admin <book, id>
+message RequestToAdmin {
+    string id = 1;
+    Book book = 2;
+    string status = 3;
+}
+
+
+
+service Service {
+    rpc PersonalAccount(PersonalAccountRequest) returns (PersonalAccountResponse);
+    rpc CreatePersonalAccount(CreateAccountRequest) returns (CreateAccountResponse);
+    rpc AddBookToCart(AddBookRequest) returns (AddBookResponse);
+}
+
+message AddBookRequest {
+    map<string,int32> bookList = 1;
+}
+
+message AddBookResponse {
+    Cart cart = 1;
+    string error = 2;
+}
+
+message PersonalAccountRequest {
+    string pswd = 1;
+    string username = 2;
+}
+
+message PersonalAccountResponse {
+    Account account = 1;
+}
+
+message CreateAccountRequest {
+    // string id = 1;
+    string type = 2; // admin/user/author
+    string fname = 3;
+    string lname = 4;
+    string username = 5;
+    string pswd = 6; // hash of the password to check 
+}
+
+message CreateAccountResponse {
+    Account account = 1;
+    string error = 2;
+}
