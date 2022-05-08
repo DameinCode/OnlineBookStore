@@ -6,11 +6,11 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/DameinCode/Golang-spring-2022/Uni/Final/OnlineBookStore/Account"
-	accountpb "github.com/DameinCode/Golang-spring-2022/Uni/Final/OnlineBookStore/Account/rpc"
-	"github.com/DameinCode/Golang-spring-2022/Uni/Final/OnlineBookStore/Book"
-	bookpb "github.com/DameinCode/Golang-spring-2022/Uni/Final/OnlineBookStore/Book/rpc"
-	"github.com/DameinCode/Golang-spring-2022/Uni/Final/OnlineBookStore/store"
+	"github.com/DameinCode/OnlineBookStore/OnlineBookStore/Account"
+	accountpb "github.com/DameinCode/OnlineBookStore/OnlineBookStore/Account/rpc"
+	"github.com/DameinCode/OnlineBookStore/OnlineBookStore/Book"
+	bookpb "github.com/DameinCode/OnlineBookStore/OnlineBookStore/Book/rpc"
+	"github.com/DameinCode/OnlineBookStore/OnlineBookStore/store"
 	"google.golang.org/grpc"
 )
 
