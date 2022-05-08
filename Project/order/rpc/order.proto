@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package order;
+
+option go_package = "/rpc;orderrpc";
+
+message Address {
+    string street = 1;
+    string postal = 2;
+    string city = 3;
+    string country = 4;
+}
+
+message Order {
+    string id = 1;
+    string fName = 2;
+    string lName = 3;
+    map<string,int32> bookList = 5;
+    Address address = 6;
+}
+
+
+service Service {
+    rpc ListOrders(ListOrdersRequest) returns (ListOrdersResponse);
+    rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse);
+}
+
+message ListOrdersRequest {}
+
+message ListOrdersResponse {
+    repeated Order orders = 1;
+}
+
+message CreateOrderRequest {
+    string fName = 1;
+    string lName = 2;
+    map<string,int32> bookList = 3;
+    Address address = 4;
+}
+
+message CreateOrderResponse {
+    Order order = 1;
+}

@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package book;
+
+option go_package = "/rpc;bookrpc";
+
+message Book {
+    string id = 1;
+    string name = 2;
+    string author = 3;
+    int64 year = 4;
+    string annotation = 5;
+    string content = 6;
+    float price = 7;
+}
+
+service Service {
+    rpc ListBooks(ListBooksRequest) returns (ListBooksResponse);
+    rpc BookOfId(BookOfIdRequest) returns (BookOfIdResponse);
+    rpc CreateBook(CreateBookRequest) returns (CreateBookResponse);
+}
+
+message ListBooksRequest {}
+
+message ListBooksResponse {
+    repeated Book books = 1;
+}
+
+message BookOfIdRequest {
+    string id = 1;
+}
+
+message BookOfIdResponse {
+    Book book = 1;
+    string error = 2;
+}
+
+message CreateBookRequest {
+    string id = 1;
+    string type = 2;
+    string name = 3;
+    string author = 4;
+    int32 year = 5;
+    string annotation = 6;
+    string content = 7;
+    float price = 8;
+}
+
+message CreateBookResponse {
+    Book book = 1;
+    string erroe = 2;
+}
